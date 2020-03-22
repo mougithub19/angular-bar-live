@@ -13,16 +13,15 @@ export class AppComponent {
   public barChartLegend = true;
 
   public barChartData: ChartDataSets[] = [
-    { data: [1, 2, 3], label: 'Approved', stack: 'a' },
-    { data: [1, 2, 3], label: 'Accepted', stack: 'a' },
-    { data: [1, 2, 3], label: 'Open', stack: 'a' },
-    { data: [1, 2, 3], label: 'In Progress', stack: 'a' },
-  ];
-  public barChartLabels: string[] = ['P', 'R', 'B'];
+    { data: [10, 6, 2, 5 ], label: 'ARR', stack: 'a' },
+    { data: [6, 8, 3, 2 ],label: 'DEP', stack: 'a' },
+   ];
+  public barChartLabels: string[] = ['Terminal1', 'Terminal2', 'Terminal3','International'];
 
   constructor() { }
 
   ngOnInit() {
+     setInterval(() => this.randomize(), 1000);
   }
 
   // events
@@ -38,12 +37,10 @@ export class AppComponent {
     // Only Change 3 values
     const data = [
       Math.round(Math.random() * 100),
-      59,
-      80,
-      (Math.random() * 100),
-      56,
-      (Math.random() * 100),
-      40];
+      Math.round(Math.random() * 100),
+      Math.round(Math.random() * 100),
+      Math.round(Math.random() * 100)
+      ];
     const clone = JSON.parse(JSON.stringify(this.barChartData));
     clone[0].data = data;
     this.barChartData = clone;

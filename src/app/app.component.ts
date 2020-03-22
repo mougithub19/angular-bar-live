@@ -7,14 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public barChartOptions: ChartOptions = {
-    responsive: true
+    responsive: true,
+
   };
   public barChartType: ChartType = 'horizontalBar';
   public barChartLegend = true;
 
   public barChartData: ChartDataSets[] = [
-    { data: [10, 6, 2, 5 ], label: 'ARR', stack: 'a' },
-    { data: [6, 8, 3, 2 ],label: 'DEP', stack: 'a' },
+ 
+    { data: [10, 6, 2, 5 ], label: 'Arrival(ARR)', stack: 'a' },
+    { data: [20,20,20,20 ],label: 'Departure(DEP)', stack: 'a' },
    ];
   public barChartLabels: string[] = ['Terminal1', 'Terminal2', 'Terminal3','International'];
 
@@ -39,8 +41,14 @@ export class AppComponent {
       Math.round(Math.random() * 100),
       Math.round(Math.random() * 100),
       Math.round(Math.random() * 100),
-      Math.round(Math.random() * 100)
+      Math.round(Math.random() * 100),
+      25,
+      30,
+      35,
+      40
       ];
+
+      
     const clone = JSON.parse(JSON.stringify(this.barChartData));
     clone[0].data = data;
     this.barChartData = clone;

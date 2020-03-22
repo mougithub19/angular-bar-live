@@ -42,10 +42,6 @@ export class AppComponent {
       Math.round(Math.random() * 100),
       Math.round(Math.random() * 100),
       Math.round(Math.random() * 100),
-      25,
-      30,
-      35,
-      40
       ];
 
       

@@ -10,8 +10,31 @@ export class AppComponent {
     responsive: true,
     title : {
 						display : true,
-						text : 'Test'
+						text : 'Airline System - terminal wise total number of flight '
 		},
+    scales: {
+            yAxes: [{
+          
+                dispaly:true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Terminal'
+                }
+            
+            }],
+            xAxes: [{
+          
+                dispaly:true,
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Total Flight (ARR + DEP)'
+                }
+            
+            }]
+            
+        
+        },
+    order:true,
 
   };
   public barChartType: ChartType = 'horizontalBar';
@@ -23,6 +46,7 @@ export class AppComponent {
       data: [40, 20, 10, 30 ], 
       label: 'Arrival(ARR)', 
       stack: 'a',
+      
    
     },
      { 

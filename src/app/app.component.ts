@@ -8,6 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public barChartOptions: ChartOptions = {
     responsive: true,
+    title : {
+						display : true,
+						text : 'Test'
+		},
 
   };
   public barChartType: ChartType = 'horizontalBar';
@@ -15,11 +19,21 @@ export class AppComponent {
 
   public barChartData: ChartDataSets[] = [
  
-    { data: [10, 6, 2, 5 ], label: 'Arrival(ARR)', stack: 'a' },
-    { data: [20,20,20,20 ],label: 'Departure(DEP)', stack: 'a' },
+    { 
+      data: [40, 20, 10, 30 ], 
+      label: 'Arrival(ARR)', 
+      stack: 'a',
+   
+    },
+     { 
+      data: [15, 25, 20, 20 ], 
+      label: 'Departure(DEP)', 
+      stack: 'a', 
+    },
+    
    ];
   public barChartLabels: string[] = ['Terminal1', 'Terminal2', 'Terminal3','International'];
-
+  
   constructor() { }
 
   ngOnInit() {
@@ -48,11 +62,6 @@ export class AppComponent {
     const clone = JSON.parse(JSON.stringify(this.barChartData));
     clone[0].data = data;
     this.barChartData = clone;
-    /**
-     * (My guess), for Angular to recognize the change in the dataset
-     * it has to change the dataset variable directly,
-     * so one way around it, is to clone the data, change it and then
-     * assign it;
-     */
+    
   }
 }
